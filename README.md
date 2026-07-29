@@ -2,6 +2,9 @@
 
 Personal offline archive (HTML). Open [GitHub Pages](https://aryanrhmn.github.io/tmtlongshort-wiki/).
 
-Source of truth for archives + ontology: private monorepo `aryanrhmn/wiki`.
+## Sections
+- I–III: Decoupling / AI regime / Pod risk craft
+- **IV. Podcast / Listening Dumps** — weekly Watch Later screenshot dumps
+- **V. Transcript Pilot** — cleaned YouTube captions for one Watch Later crop (linked HTML under `transcripts/pilot/`)
 
-Pieces: 51 (includes Podcast / Listening Dumps section).
+Source of truth: private monorepo `aryanrhmn/wiki`. Personal reference only; third-party video rights remain with channels.
