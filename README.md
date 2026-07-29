@@ -1,7 +1,7 @@
-# TMTLongShort Offline Wiki
+# @TMTLongShort offline wiki
 
-Live: https://aryanrhmn.github.io/tmtlongshort-wiki/
+Personal offline archive (HTML). Open [GitHub Pages](https://aryanrhmn.github.io/tmtlongshort-wiki/).
 
-Curated pilot from [@TMTLongShort](https://x.com/TMTLongShort) — geopolitics×AI as book construction, hyperscaler/capex game theory, and pod-style vol/positioning.
+Source of truth for archives + ontology: private monorepo `aryanrhmn/wiki`.
 
-Personal archive; author retains copyright.
+Pieces: 51 (includes Podcast / Listening Dumps section).
