@@ -4,14 +4,101 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>TMT transcript pilot</title>
 <style>
-:root { --bg:#0e0e0e; --panel:#161616; --text:#EFECE7; --muted:#A39C8F; --accent:#c4a574; --rule:#2e2e2e; }
+:root {
+  --bg:#0e0e0e; --panel:#161616; --panel2:#1c1c1c; --text:#EFECE7;
+  --muted:#A39C8F; --accent:#c4a574; --rule:#2e2e2e;
+  --host:#5A8060; --guest:#8a6d3b; --host-bg:rgba(90,128,96,0.18);
+  --guest-bg:rgba(138,109,59,0.22);
+}
 * { box-sizing: border-box; }
 body { margin:0; font-family: Georgia, 'Times New Roman', serif; background:var(--bg); color:var(--text); line-height:1.55; font-size:16.5px; }
 main { max-width: 42rem; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
 .kicker { font-family: system-ui,sans-serif; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); }
-h1 { font-size:1.45rem; line-height:1.25; margin:0.4rem 0 0.75rem; }
-.meta { font-family: system-ui,sans-serif; font-size:0.82rem; color:var(--muted); margin:0 0 1.25rem; }
+h1 { font-size:1.45rem; line-height:1.25; margin:0.4rem 0 0.85rem; }
+/* ---- CAST BAR (host / guest) — primary visual ---- */
+.cast {
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  background: linear-gradient(180deg, #1a1a1a 0%, #141414 100%);
+  border: 2px solid var(--accent);
+  border-radius: 10px;
+  padding: 1rem 1.1rem 1.15rem;
+  margin: 0 0 1.35rem;
+  box-shadow: 0 0 0 1px rgba(196,165,116,0.15), 0 8px 28px rgba(0,0,0,0.45);
+}
+.cast-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 0.75rem;
+}
+.cast-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+@media (max-width: 560px) {
+  .cast-grid { grid-template-columns: 1fr; }
+}
+.cast-card {
+  border-radius: 8px;
+  padding: 0.85rem 0.95rem;
+  border: 1px solid var(--rule);
+  min-height: 5.5rem;
+}
+.cast-card.host {
+  background: var(--host-bg);
+  border-color: rgba(90,128,96,0.55);
+}
+.cast-card.guest {
+  background: var(--guest-bg);
+  border-color: rgba(196,165,116,0.45);
+}
+.cast-card.solo {
+  grid-column: 1 / -1;
+  background: var(--host-bg);
+  border-color: rgba(90,128,96,0.55);
+}
+.role-pill {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.28rem 0.55rem;
+  border-radius: 999px;
+  margin: 0 0 0.55rem;
+  color: #0e0e0e;
+}
+.role-pill.host { background: #7aab80; }
+.role-pill.guest { background: #c4a574; }
+.role-pill.narrator { background: #7aab80; }
+.role-pill.moderator { background: #7aab80; }
+.cast-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.25;
+  margin: 0 0 0.25rem;
+}
+.cast-affil {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.4;
+}
+.cast-summary {
+  margin: 0.85rem 0 0;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.88rem;
+  color: var(--silver, #DEDEDE);
+  line-height: 1.45;
+}
+.meta { font-family: system-ui,sans-serif; font-size:0.8rem; color:var(--muted); margin:0 0 1rem; }
 .meta a { color:var(--accent); }
+.meta div { margin: 0.2rem 0; }
 hr { border:0; border-top:1px solid var(--rule); margin:1.25rem 0; }
 .transcript p { margin: 0 0 0.9rem; }
 .back { font-family: system-ui,sans-serif; font-size:0.85rem; margin-top:2rem; }
@@ -21,9 +108,9 @@ hr { border:0; border-top:1px solid var(--rule); margin:1.25rem 0; }
 </head><body><main>
 <div class="kicker">@TMTLongShort · transcript pilot</div>
 <h1>Watch Later crop — cleaned transcripts</h1>
-<div class="note">Test run from one dump screenshot. 7 videos resolved; captions via YouTube (Android client). Private monorepo pack.</div>
-<ul style="font-family:system-ui,sans-serif;line-height:1.7;padding-left:1.2rem">
-<li style="margin-bottom:0.65rem"><a href="ojje7c46LpE.html">SILVER Stocks NEXT Up to Soar - &#x27;I&#x27;m a VERY Large Holder&#x27;: Rick Rule</a> <span style="color:#A39C8F;font-family:system-ui;font-size:0.8rem">— Commodity Culture · ok</span><br><span style="color:#A39C8F;font-family:system-ui;font-size:0.78rem">Host (Commodity Culture) interviews Rick Rule.</span></li><li style="margin-bottom:0.65rem"><a href="9tqOPS6x9l8.html">Photonic Chips Are Coming Faster Than Anyone Expected | Akhetonics #003</a> <span style="color:#A39C8F;font-family:system-ui;font-size:0.8rem">— Europe&#x27;s Foundry · ok</span><br><span style="color:#A39C8F;font-family:system-ui;font-size:0.78rem">Europe&#x27;s Foundry hosts Akhetonics co-founders (Michael, Leo).</span></li><li style="margin-bottom:0.65rem"><a href="BIpguXCcTSc.html">Growing Calls to Go All In Against Iran</a> <span style="color:#A39C8F;font-family:system-ui;font-size:0.8rem">— Preston Stewart · ok</span><br><span style="color:#A39C8F;font-family:system-ui;font-size:0.78rem">Solo channel narration (Preston Stewart); no primary guest.</span></li><li style="margin-bottom:0.65rem"><a href="zlkCC4d3_Po.html">North Korea is Trump-Proofing its Regime</a> <span style="color:#A39C8F;font-family:system-ui;font-size:0.8rem">— WarFronts · ok</span><br><span style="color:#A39C8F;font-family:system-ui;font-size:0.78rem">WarFronts documentary narration (no guest interview).</span></li><li style="margin-bottom:0.65rem"><a href="-aRZcFdIh94.html">David Rubenstein - Kenneth Griffin - Michael O&#x27;Leary - Robyn Grew | Panel discussion</a> <span style="color:#A39C8F;font-family:system-ui;font-size:0.8rem">— Norges Bank Investment Management · ok</span><br><span style="color:#A39C8F;font-family:system-ui;font-size:0.78rem">Moderator David Rubenstein with panelists Griffin, O&#x27;Leary, Grew.</span></li><li style="margin-bottom:0.65rem"><a href="HyhNOoXevY4.html">Trump&#x27;s Plan for AI Dominance</a> <span style="color:#A39C8F;font-family:system-ui;font-size:0.8rem">— Joe Lonsdale · ok</span><br><span style="color:#A39C8F;font-family:system-ui;font-size:0.78rem">Joe Lonsdale interviews Under Secretary Jacob Helberg.</span></li><li style="margin-bottom:0.65rem"><a href="adgbH9FixW0.html">BREAKING: Elon Musk&#x27;s First Interview Since Jury Rejected Claim Against Altman&#x27;s OpenAI</a> <span style="color:#A39C8F;font-family:system-ui;font-size:0.8rem">— Forbes · ok</span><br><span style="color:#A39C8F;font-family:system-ui;font-size:0.78rem">Forbes (Randall Lane) interviews Elon Musk.</span></li>
+<div class="note">Each episode opens with a <strong style="color:#c4a574">HOST / GUEST</strong> cast bar. Personal offline reference only.</div>
+<ul style="padding:0;margin:0">
+<li style="margin-bottom:1rem;list-style:none;border:1px solid #2e2e2e;border-radius:8px;padding:0.85rem 1rem;background:#161616"><a href="ojje7c46LpE.html" style="font-size:1.02rem;font-weight:600">SILVER Stocks NEXT Up to Soar - &#x27;I&#x27;m a VERY Large Holder&#x27;: Rick Rule</a><div style="color:#A39C8F;font-family:system-ui;font-size:0.8rem;margin-top:0.25rem">Commodity Culture · ok</div><div style="margin-top:0.35rem;font-family:system-ui,sans-serif;font-size:0.88rem;color:#DEDEDE"><span style="display:inline-block;background:#7aab80;color:#0e0e0e;font-size:0.65rem;font-weight:800;letter-spacing:0.08em;padding:0.15rem 0.4rem;border-radius:999px;margin-right:0.35rem">HOST</span> Commodity Culture host · <span style="display:inline-block;background:#c4a574;color:#0e0e0e;font-size:0.65rem;font-weight:800;letter-spacing:0.08em;padding:0.15rem 0.4rem;border-radius:999px;margin-right:0.35rem">GUEST</span> Rick Rule</div></li><li style="margin-bottom:1rem;list-style:none;border:1px solid #2e2e2e;border-radius:8px;padding:0.85rem 1rem;background:#161616"><a href="9tqOPS6x9l8.html" style="font-size:1.02rem;font-weight:600">Photonic Chips Are Coming Faster Than Anyone Expected | Akhetonics #003</a><div style="color:#A39C8F;font-family:system-ui;font-size:0.8rem;margin-top:0.25rem">Europe&#x27;s Foundry · ok</div><div style="margin-top:0.35rem;font-family:system-ui,sans-serif;font-size:0.88rem;color:#DEDEDE"><span style="display:inline-block;background:#7aab80;color:#0e0e0e;font-size:0.65rem;font-weight:800;letter-spacing:0.08em;padding:0.15rem 0.4rem;border-radius:999px;margin-right:0.35rem">HOST</span> Europe&#x27;s Foundry narrator / host · <span style="display:inline-block;background:#c4a574;color:#0e0e0e;font-size:0.65rem;font-weight:800;letter-spacing:0.08em;padding:0.15rem 0.4rem;border-radius:999px;margin-right:0.35rem">GUEST</span> Michael, Leo</div></li><li style="margin-bottom:1rem;list-style:none;border:1px solid #2e2e2e;border-radius:8px;padding:0.85rem 1rem;background:#161616"><a href="BIpguXCcTSc.html" style="font-size:1.02rem;font-weight:600">Growing Calls to Go All In Against Iran</a><div style="color:#A39C8F;font-family:system-ui;font-size:0.8rem;margin-top:0.25rem">Preston Stewart · ok</div><div style="margin-top:0.35rem;font-family:system-ui,sans-serif;font-size:0.88rem;color:#DEDEDE"><span style="display:inline-block;background:#7aab80;color:#0e0e0e;font-size:0.65rem;font-weight:800;letter-spacing:0.08em;padding:0.15rem 0.4rem;border-radius:999px;margin-right:0.35rem">HOST</span> Preston Stewart · <span style="display:inline-block;background:#c4a574;color:#0e0e0e;font-size:0.65rem;font-weight:800;letter-spacing:0.08em;padding:0.15rem 0.4rem;border-radius:999px;margin-right:0.35rem">GUEST</span> — solo/narration</div></li><li style="margin-bottom:1rem;list-style:none;border:1px solid #2e2e2e;border-radius:8px;padding:0.85rem 1rem;background:#161616"><a href="zlkCC4d3_Po.html" style="font-size:1.02rem;font-weight:600">North Korea is Trump-Proofing its Regime</a><div style="color:#A39C8F;font-family:system-ui;font-size:0.8rem;margin-top:0.25rem">WarFronts · ok</div><div style="margin-top:0.35rem;font-family:system-ui,sans-serif;font-size:0.88rem;color:#DEDEDE"><span style="display:inline-block;background:#7aab80;color:#0e0e0e;font-size:0.65rem;font-weight:800;letter-spacing:0.08em;padding:0.15rem 0.4rem;border-radius:999px;margin-right:0.35rem">HOST</span> WarFronts narrator · <span style="display:inline-block;background:#c4a574;color:#0e0e0e;font-size:0.65rem;font-weight:800;letter-spacing:0.08em;padding:0.15rem 0.4rem;border-radius:999px;margin-right:0.35rem">GUEST</span> — solo/narration</div></li><li style="margin-bottom:1rem;list-style:none;border:1px solid #2e2e2e;border-radius:8px;padding:0.85rem 1rem;background:#161616"><a href="-aRZcFdIh94.html" style="font-size:1.02rem;font-weight:600">David Rubenstein - Kenneth Griffin - Michael O&#x27;Leary - Robyn Grew | Panel discussion</a><div style="color:#A39C8F;font-family:system-ui;font-size:0.8rem;margin-top:0.25rem">Norges Bank Investment Management · ok</div><div style="margin-top:0.35rem;font-family:system-ui,sans-serif;font-size:0.88rem;color:#DEDEDE"><span style="display:inline-block;background:#7aab80;color:#0e0e0e;font-size:0.65rem;font-weight:800;letter-spacing:0.08em;padding:0.15rem 0.4rem;border-radius:999px;margin-right:0.35rem">HOST</span> David Rubenstein · <span style="display:inline-block;background:#c4a574;color:#0e0e0e;font-size:0.65rem;font-weight:800;letter-spacing:0.08em;padding:0.15rem 0.4rem;border-radius:999px;margin-right:0.35rem">GUEST</span> Kenneth Griffin, Michael O&#x27;Leary, Robyn Grew</div></li><li style="margin-bottom:1rem;list-style:none;border:1px solid #2e2e2e;border-radius:8px;padding:0.85rem 1rem;background:#161616"><a href="HyhNOoXevY4.html" style="font-size:1.02rem;font-weight:600">Trump&#x27;s Plan for AI Dominance</a><div style="color:#A39C8F;font-family:system-ui;font-size:0.8rem;margin-top:0.25rem">Joe Lonsdale · ok</div><div style="margin-top:0.35rem;font-family:system-ui,sans-serif;font-size:0.88rem;color:#DEDEDE"><span style="display:inline-block;background:#7aab80;color:#0e0e0e;font-size:0.65rem;font-weight:800;letter-spacing:0.08em;padding:0.15rem 0.4rem;border-radius:999px;margin-right:0.35rem">HOST</span> Joe Lonsdale · <span style="display:inline-block;background:#c4a574;color:#0e0e0e;font-size:0.65rem;font-weight:800;letter-spacing:0.08em;padding:0.15rem 0.4rem;border-radius:999px;margin-right:0.35rem">GUEST</span> Jacob Helberg</div></li><li style="margin-bottom:1rem;list-style:none;border:1px solid #2e2e2e;border-radius:8px;padding:0.85rem 1rem;background:#161616"><a href="adgbH9FixW0.html" style="font-size:1.02rem;font-weight:600">BREAKING: Elon Musk&#x27;s First Interview Since Jury Rejected Claim Against Altman&#x27;s OpenAI</a><div style="color:#A39C8F;font-family:system-ui;font-size:0.8rem;margin-top:0.25rem">Forbes · ok</div><div style="margin-top:0.35rem;font-family:system-ui,sans-serif;font-size:0.88rem;color:#DEDEDE"><span style="display:inline-block;background:#7aab80;color:#0e0e0e;font-size:0.65rem;font-weight:800;letter-spacing:0.08em;padding:0.15rem 0.4rem;border-radius:999px;margin-right:0.35rem">HOST</span> Randall Lane · <span style="display:inline-block;background:#c4a574;color:#0e0e0e;font-size:0.65rem;font-weight:800;letter-spacing:0.08em;padding:0.15rem 0.4rem;border-radius:999px;margin-right:0.35rem">GUEST</span> Elon Musk</div></li>
 </ul>
 <p class="back"><a href="../index.html#home">← Back to TMT wiki</a></p>
 </main></body></html>

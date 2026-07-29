@@ -4,14 +4,101 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Trump&#x27;s Plan for AI Dominance</title>
 <style>
-:root { --bg:#0e0e0e; --panel:#161616; --text:#EFECE7; --muted:#A39C8F; --accent:#c4a574; --rule:#2e2e2e; }
+:root {
+  --bg:#0e0e0e; --panel:#161616; --panel2:#1c1c1c; --text:#EFECE7;
+  --muted:#A39C8F; --accent:#c4a574; --rule:#2e2e2e;
+  --host:#5A8060; --guest:#8a6d3b; --host-bg:rgba(90,128,96,0.18);
+  --guest-bg:rgba(138,109,59,0.22);
+}
 * { box-sizing: border-box; }
 body { margin:0; font-family: Georgia, 'Times New Roman', serif; background:var(--bg); color:var(--text); line-height:1.55; font-size:16.5px; }
 main { max-width: 42rem; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
 .kicker { font-family: system-ui,sans-serif; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); }
-h1 { font-size:1.45rem; line-height:1.25; margin:0.4rem 0 0.75rem; }
-.meta { font-family: system-ui,sans-serif; font-size:0.82rem; color:var(--muted); margin:0 0 1.25rem; }
+h1 { font-size:1.45rem; line-height:1.25; margin:0.4rem 0 0.85rem; }
+/* ---- CAST BAR (host / guest) — primary visual ---- */
+.cast {
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  background: linear-gradient(180deg, #1a1a1a 0%, #141414 100%);
+  border: 2px solid var(--accent);
+  border-radius: 10px;
+  padding: 1rem 1.1rem 1.15rem;
+  margin: 0 0 1.35rem;
+  box-shadow: 0 0 0 1px rgba(196,165,116,0.15), 0 8px 28px rgba(0,0,0,0.45);
+}
+.cast-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 0.75rem;
+}
+.cast-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+@media (max-width: 560px) {
+  .cast-grid { grid-template-columns: 1fr; }
+}
+.cast-card {
+  border-radius: 8px;
+  padding: 0.85rem 0.95rem;
+  border: 1px solid var(--rule);
+  min-height: 5.5rem;
+}
+.cast-card.host {
+  background: var(--host-bg);
+  border-color: rgba(90,128,96,0.55);
+}
+.cast-card.guest {
+  background: var(--guest-bg);
+  border-color: rgba(196,165,116,0.45);
+}
+.cast-card.solo {
+  grid-column: 1 / -1;
+  background: var(--host-bg);
+  border-color: rgba(90,128,96,0.55);
+}
+.role-pill {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.28rem 0.55rem;
+  border-radius: 999px;
+  margin: 0 0 0.55rem;
+  color: #0e0e0e;
+}
+.role-pill.host { background: #7aab80; }
+.role-pill.guest { background: #c4a574; }
+.role-pill.narrator { background: #7aab80; }
+.role-pill.moderator { background: #7aab80; }
+.cast-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.25;
+  margin: 0 0 0.25rem;
+}
+.cast-affil {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.4;
+}
+.cast-summary {
+  margin: 0.85rem 0 0;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.88rem;
+  color: var(--silver, #DEDEDE);
+  line-height: 1.45;
+}
+.meta { font-family: system-ui,sans-serif; font-size:0.8rem; color:var(--muted); margin:0 0 1rem; }
 .meta a { color:var(--accent); }
+.meta div { margin: 0.2rem 0; }
 hr { border:0; border-top:1px solid var(--rule); margin:1.25rem 0; }
 .transcript p { margin: 0 0 0.9rem; }
 .back { font-family: system-ui,sans-serif; font-size:0.85rem; margin-top:2rem; }
@@ -21,27 +108,13 @@ hr { border:0; border-top:1px solid var(--rule); margin:1.25rem 0; }
 </head><body><main>
 <div class="kicker">Transcript pilot · offline</div>
 <h1>Trump&#x27;s Plan for AI Dominance</h1>
+<div class="cast" role="region" aria-label="Host and guests"><div class="cast-label">Who is speaking · host vs guest</div><div class="cast-grid"><div class="cast-card host"><span class="role-pill host">HOST</span><div class="cast-name">Joe Lonsdale</div><p class="cast-affil">8VC / American Optimists</p></div><div class="cast-card guest"><span class="role-pill guest">GUEST</span><div class="cast-name">Jacob Helberg</div><p class="cast-affil">US State Department (Under Secretary)</p></div></div><p class="cast-summary">Joe Lonsdale interviews Under Secretary Jacob Helberg.</p></div>
 <div class="meta"><div>Channel: <strong>Joe Lonsdale</strong></div>
 <div>URL: https://www.youtube.com/watch?v=HyhNOoXevY4</div>
 <div>Duration: 34:03</div>
 <div>Video ID: `HyhNOoXevY4`</div>
-<div>Captions: en / asr (via YouTube; personal offline reference only)</div>
-<div><strong>Format:</strong> interview</div>
-<div><strong>Show / series:</strong> American Optimists</div>
-<div><strong>Podcaster / host:</strong> Joe Lonsdale</div>
-<div><strong>Guest / speakers:</strong> Jacob Helberg</div>
-<div class='note' style='margin-top:1rem'>
-<h2 style='font-size:1.05rem;margin:1rem 0 0.5rem'>Who&#x27;s who</h2>
-<p style='font-family:system-ui,sans-serif;font-size:0.9rem;margin:0.35rem 0'>Joe Lonsdale interviews Under Secretary Jacob Helberg.</p>
-<h3 style='font-family:system-ui,sans-serif;font-size:0.85rem;color:var(--accent);letter-spacing:0.06em;text-transform:uppercase;margin:0.85rem 0 0.35rem'>Host / podcaster / narrator</h3>
-<div style='font-family:system-ui,sans-serif;font-size:0.88rem;margin:0.25rem 0'><strong>Joe Lonsdale</strong> (host) — 8VC / American Optimists</div>
-<p style='font-family:system-ui,sans-serif;font-size:0.9rem;margin:0.35rem 0'>_Interviewer_</p>
-<h3 style='font-family:system-ui,sans-serif;font-size:0.85rem;color:var(--accent);letter-spacing:0.06em;text-transform:uppercase;margin:0.85rem 0 0.35rem'>Guests / panelists / subjects</h3>
-<div style='font-family:system-ui,sans-serif;font-size:0.88rem;margin:0.25rem 0'><strong>Jacob Helberg</strong> (guest) — US State Department (Under Secretary)</div>
-<p style='font-family:system-ui,sans-serif;font-size:0.9rem;margin:0.35rem 0'>_Primary interview subject_</p>
-<p style='font-family:system-ui,sans-serif;font-size:0.78rem;color:var(--muted);border-left:2px solid var(--rule);padding-left:0.65rem;margin:0.5rem 0'>**Attribution limit:** YouTube auto-captions are not reliable speaker diarization. Names above are from title, channel credits, and transcript intros — not word-level labels in the body.</p>
-</div></div>
-<div class="note">Personal offline reference only. Channel retains copyright. Auto-captions cleaned lightly — not a professional transcript.</div>
+<div>Captions: en / asr (via YouTube; personal offline reference only)</div></div>
+<div class="note">Personal offline reference only. Channel retains copyright. Auto-captions cleaned lightly — not a professional transcript. Host/guest labels are curated (not word-level ASR diarization).</div>
 <hr/>
 <div class="transcript"><p>In the history of human civilization, we have never encountered a time when you had a technology that led to mass unemployment. &gt;&gt; Many people are skeptical of AI in the US. &gt;&gt; People would have said that personal computers would have put a lot of secretaries out of work.</p>
 <p>In reality, the PC revolution gave birth to the software industry, and it displaced 3 and 1/2 million jobs, but it actually created 19 million jobs in America. For all of the noise in the press, unemployment is still below 5%. We are at the center of the biggest economic revolution in over 100 years.</p>
